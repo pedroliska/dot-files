@@ -1,0 +1,47 @@
+[user]
+  name = Pedro Liska
+  email = pedro.liska@extendhealth.com
+[push]
+  default = simple
+[color "status"]
+  added = white green
+  changed = white red
+  untracked = white red
+[core]
+  autocrlf = true
+  excludesfile = c:/home/.gitignore_global
+
+
+###################
+## DIFF config
+###################
+[diff]
+  renames = copies
+  tool = p4diff
+  #tool = tortoisediff
+[difftool]
+  prompt = false
+
+[difftool "p4diff"]
+  cmd = p4merge "$LOCAL" "$REMOTE"
+[difftool "tortoisediff"]
+  cmd = \""c:/Program Files/TortoiseGIT/bin/TortoiseGitMerge.exe"\" -mine:"$REMOTE" -base:"$LOCAL"
+
+
+###################
+## MERGE config
+###################
+[merge]
+  keepBackup = false
+  tool = p4merge
+  #tool = tortoisemerge
+[mergetool]
+  prompt = false
+  keepBackup = false
+  keepTemporaries = false
+
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  trustExitCode = false
+[mergetool "tortoisemerge"]
+  cmd = \""c:/Program Files/TortoiseGIT/bin/TortoiseGitMerge.exe"\" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"
