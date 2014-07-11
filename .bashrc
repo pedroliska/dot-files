@@ -14,7 +14,6 @@ alias sl='([[ ! -d "src" ]] && start *.sln) || start src/*.sln'
 alias ss='startserver'
 alias sd='start .'
 alias bottle='bake bottles:prepare; start .\\Build\\Bottles\\debug'
-alias clobber='touch clobber.log && start clobber.log && bake clobber default 2>&1 | cut -c-1000 > clobber.log && echo "----------- DONE -----------" >> clobber.log &'
 alias runraven='start "src/packages/RavenDB.Server/tools/Raven.Server.exe"'
 alias runkarma='node node_modules/karma/bin/karma start --single-run --browsers PhantomJS'
 alias st='storyteller -p chrome'
@@ -128,6 +127,21 @@ function issuelesscommits() {
     return
   fi
   git log --since $1 --pretty=oneline | grep -v '#'
+}
+
+function uberbake () {
+  # the commented lines below makes bash exit if a line has an error
+  # the downside is that it kills your bash session it does not just
+  # stop the function execution. So I went back to using &&
+  #set -e
+  #trap 'exit' ERR
+
+  # ensure flie exists and empty it out
+  logFile=uberbake.log && \
+  echo > $logFile && \
+  start $logFile && \
+  bake 2>&1 | cut -c-1000 > $logFile && \
+  echo "----------- DONE -----------" >> $logFile &
 }
 
 
