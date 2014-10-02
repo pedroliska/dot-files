@@ -15,7 +15,7 @@ alias ss='startserver'
 alias sd='start .'
 alias bottle='bake bottles:prepare; start .\\Build\\Bottles\\debug'
 alias runraven='start "src/packages/RavenDB.Server/tools/Raven.Server.exe"'
-alias runkarma='node node_modules/karma/bin/karma start --single-run --browsers PhantomJS'
+alias karmarun='node node_modules/karma/bin/karma start --browsers PhantomJS'
 alias st='storyteller -p chrome'
 
 alias notes='ed "C:\Users\pedli\Documents\00-mine\notes\notes.txt" &'
@@ -25,30 +25,47 @@ alias codefolder='cd /c/code/'
 
 alias role='whoami -groups -fo list | grep -i' 
 alias cw='compass watch -c ../../ExtendHealth.Adminsuite/config.rb'
+alias fr='bake oeapp:run'
 
 
 ###########################
 # Git aliases
 ###########################
-alias gd='cmd "/C /home/bin/diff.bat" &'
 alias gs='git status'
+alias gd='git diff'
 alias ga='git add --all .'
 alias gc='git commit -m'
 alias gco='git checkout'
-alias gk='git fetch origin; git remote prune origin; gitk --all &'
+alias  gk='git fetch origin; git remote prune origin; gitk &'
+alias gka='git fetch origin; git remote prune origin; gitk --all &'
+alias gp='git pull'
 
+alias td='cmd "/C /home/bin/tdiff.bat" &'
+alias tc='cmd "/C /home/bin/tcommit.bat" &'
 
 ###########################
 # bash functions
 ###########################
 
-function fu(){
-  if [ -z "$1" ] || [ -z "$2" ]
+function findg(){
+  if [ -z "$1" ]
   then
-    echo "Missing parameter"
-    echo "usage: fu 'file name pattern' 'string pattern'"
+    echo "Find file and grep its contents"
+    echo "Syntax:"
+    echo " findg stringPattern fileNamePattern - find matching strings on matching files"
+    echo " findg stringPattern                 - find matching strings in all regular files"
+    echo "Notes:"
+    echo " Both patterns are case insensitive"
+    echo " The patters don't need to be wrapped in quotes. Wrap them only if there is a space, or escape the space with a backslash."
+  else
+    if [ -z "$2" ]
+    then
+      # we only have one argument
+      find . -type f -print0 | xargs -0 grep -nsiI "$1"
+    else
+      find . -type f -iname "$2" -print0 | xargs -0 grep -nsiI "$1"
+    fi
   fi
-  find . -type f -name "$1" | xargs grep -nsiI "$2"
 }
 
 function symlink(){
@@ -129,6 +146,14 @@ function issuelesscommits() {
   git log --since $1 --pretty=oneline | grep -v '#'
 }
 
+function trace () {
+  logFile=trace.log  && \
+  echo > $logFile  && \
+  start $logFile  && \
+  while read x ; do echo $x | cut -c-1000 >> $logFile; done  && \
+  echo "----------- DONE -----------" >> $logFile
+}
+
 function uberbake () {
   # the commented lines below makes bash exit if a line has an error
   # the downside is that it kills your bash session it does not just
@@ -136,7 +161,7 @@ function uberbake () {
   #set -e
   #trap 'exit' ERR
 
-  # ensure flie exists and empty it out
+  # ensure file exists and empty it out
   logFile=uberbake.log && \
   echo > $logFile && \
   start $logFile && \
@@ -145,7 +170,10 @@ function uberbake () {
 }
 
 
-
+###########################
+# This line is needed by mimosa watch on the one-exchange project
+CHROME_BIN=/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+export CHROME_BIN
 
 ###########################
 # change the ls directory color
