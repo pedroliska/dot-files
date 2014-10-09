@@ -1,4 +1,9 @@
 ###########################
+# General settings
+###########################
+set -o vi
+
+###########################
 # General aliases
 ###########################
 alias bedit='start ~/.bashrc'
@@ -154,21 +159,6 @@ function trace () {
   echo "----------- DONE -----------" >> $logFile
 }
 
-function uberbake () {
-  # the commented lines below makes bash exit if a line has an error
-  # the downside is that it kills your bash session it does not just
-  # stop the function execution. So I went back to using &&
-  #set -e
-  #trap 'exit' ERR
-
-  # ensure file exists and empty it out
-  logFile=uberbake.log && \
-  echo > $logFile && \
-  start $logFile && \
-  bake 2>&1 | cut -c-1000 > $logFile && \
-  echo "----------- DONE -----------" >> $logFile &
-}
-
 
 ###########################
 # This line is needed by mimosa watch on the one-exchange project
@@ -181,3 +171,18 @@ LS_COLORS="di=01;36:"
 export LS_COLORS
 
 codefolder
+
+
+###########################
+# Temp stuff
+###########################
+
+function oeclean() {
+  rm -rf 'c:\code\one-exchange\build'
+  rm -rf 'c:\code\one-exchange\src\ExtendHealth.OneExchange\bin'
+  rm -rf 'c:\code\one-exchange\src\ExtendHealth.OneExchange\fubu-content'
+}
+
+alias dwscenarios='oeclean bake compile:all scenarios bottles:prepare publishbottle'
+alias dwoutscenarios='dwscenarios scenarios:remove'
+alias publishbottle='cp /c/code/one-exchange/Build/Bottles/debug/ExtendHealth.OneExchange.StoryTeller.zip /c/code/one-exchange/src/ExtendHealth.OneExchange/fubu-content'
