@@ -154,7 +154,7 @@ function issuelesscommits() {
 
 function trace () {
 
-  command="$@ | cut -c-1000 >> $logFile 2>&1"
+  command="$@ 2>&1 | cut -c-1000 >> $logFile"
   echo $command
 
   logFile=trace.log  && \
