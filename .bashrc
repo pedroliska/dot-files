@@ -154,7 +154,7 @@ function issuelesscommits() {
 
 function trace () {
 
-  command="$1 | cut -c-1000 >> $logFile 2>&1"
+  command="$@ | cut -c-1000 >> $logFile 2>&1"
   echo $command
 
   logFile=trace.log  && \
@@ -162,6 +162,7 @@ function trace () {
   start $logFile  && \
   eval $command && \
   echo "----------- DONE -----------" >> $logFile
+
 }
 
 
