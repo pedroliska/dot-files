@@ -14,11 +14,15 @@ alias bake='bundle exec rake'
 alias ll='ls -la'
 alias ls='ls --color=always'
 
-alias bake='bundle exec rake'
 alias sl='([[ ! -d "src" ]] && start *.sln) || start src/*.sln'
 alias ss='startserver'
 alias sd='start .'
+
+alias bake='bundle exec rake'
+alias fr='bake oeapp:run'
+alias fw='bake mimosa_fastwatch'
 alias bottle='bake bottles:prepare; start .\\Build\\Bottles\\debug'
+
 alias runraven='start "src/packages/RavenDB.Server/tools/Raven.Server.exe"'
 alias karmarun='node node_modules/karma/bin/karma start --browsers PhantomJS'
 alias st='storyteller -p chrome'
@@ -27,10 +31,7 @@ alias notes='ed "C:\Users\pedli\Documents\00-mine\notes\notes.txt" &'
 alias ripple='C\:/Ruby193/lib/ruby/gems/1.9.1/bundler/gems/build-support-5ef4b4bada10/lib/EHBuild/Ripple/buildsupport/ripple.exe'
 alias codefolder='cd /c/code/'
 
-
 alias role='whoami -groups -fo list | grep -i' 
-alias cw='compass watch -c ../../ExtendHealth.Adminsuite/config.rb'
-alias fr='bake oeapp:run'
 
 
 ###########################
@@ -152,10 +153,14 @@ function issuelesscommits() {
 }
 
 function trace () {
+
+  command="$1 | cut -c-1000 >> $logFile 2>&1"
+  echo $command
+
   logFile=trace.log  && \
   echo > $logFile  && \
   start $logFile  && \
-  while read x ; do echo $x | cut -c-1000 >> $logFile; done  && \
+  eval $command && \
   echo "----------- DONE -----------" >> $logFile
 }
 
