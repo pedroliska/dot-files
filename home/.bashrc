@@ -1,35 +1,30 @@
 ###########################
 # General settings
 ###########################
+
+# this makes it so you can do vi commands on the command line
 set -o vi
+
 
 ###########################
 # General aliases
 ###########################
-alias bedit='start ~/.bashrc'
-alias bsource='source ~/.bashrc && cd -'
-
-alias bake='bundle exec rake'
 
 alias ll='ls -la'
 alias ls='ls --color=always'
+alias bedit='start ~/.bashrc'
+alias bsource='source ~/.bashrc && cd -'
 
 alias sl='([[ ! -d "src" ]] && start *.sln) || start src/*.sln'
 alias ss='startserver'
 alias sd='start .'
-
 alias bake='bundle exec rake'
 alias fr='bake oeapp:run'
 alias fw='bake mimosa_fastwatch'
-alias bottle='bake bottles:prepare; start .\\Build\\Bottles\\debug'
+alias st='storyteller -p chrome'
 
 alias runraven='start "src/packages/RavenDB.Server/tools/Raven.Server.exe"'
 alias karmarun='node node_modules/karma/bin/karma start --browsers PhantomJS'
-alias st='storyteller -p chrome'
-
-alias notes='ed "C:\Users\pedli\Documents\00-mine\notes\notes.txt" &'
-alias ripple='C\:/Ruby193/lib/ruby/gems/1.9.1/bundler/gems/build-support-5ef4b4bada10/lib/EHBuild/Ripple/buildsupport/ripple.exe'
-alias codefolder='cd /c/code/'
 
 alias role='whoami -groups -fo list | grep -i' 
 
@@ -37,6 +32,7 @@ alias role='whoami -groups -fo list | grep -i'
 ###########################
 # Git aliases
 ###########################
+
 alias gs='git status'
 alias gd='git diff'
 alias ga='git add --all .'
@@ -48,6 +44,7 @@ alias gp='git pull'
 
 alias td='cmd "/C /home/bin/tdiff.bat" &'
 alias tc='cmd "/C /home/bin/tcommit.bat" &'
+
 
 ###########################
 # bash functions
@@ -167,7 +164,7 @@ function trace () {
 
 
 ###########################
-# This line is needed by mimosa watch on the one-exchange project
+# These lines is needed by mimosa watch on the one-exchange project
 CHROME_BIN=/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 export CHROME_BIN
 
@@ -176,19 +173,8 @@ export CHROME_BIN
 LS_COLORS="di=01;36:"
 export LS_COLORS
 
-codefolder
-
 
 ###########################
 # Temp stuff
 ###########################
 
-function oeclean() {
-  rm -rf 'c:\code\one-exchange\build'
-  rm -rf 'c:\code\one-exchange\src\ExtendHealth.OneExchange\bin'
-  rm -rf 'c:\code\one-exchange\src\ExtendHealth.OneExchange\fubu-content'
-}
-
-alias dwscenarios='oeclean bake compile:all scenarios bottles:prepare publishbottle'
-alias dwoutscenarios='dwscenarios scenarios:remove'
-alias publishbottle='cp /c/code/one-exchange/Build/Bottles/debug/ExtendHealth.OneExchange.StoryTeller.zip /c/code/one-exchange/src/ExtendHealth.OneExchange/fubu-content'
