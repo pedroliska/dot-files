@@ -1,0 +1,21 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/LAZY.tmTheme",
+	"draw_white_space": "all",
+	"font_size": 11,
+	"highlight_line": true,
+	"hot_exit": false,
+	"remember_open_files": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"vintageous_autoindent": true,
+	"vintageous_enable_cmdline_mode": true,
+	"vintageous_hlsearch": true,
+	"vintageous_ignorecase": true,
+	"vintageous_incsearch": true,
+	"vintageous_log_level": "error",
+	"vintageous_magic": true,
+	"vintageous_reset_mode_when_switching_tabs": true,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_sys_clipboard": true,
+	"vintageous_verbose": false
+}
