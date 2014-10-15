@@ -1,1 +1,1 @@
-"C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:diff /path:.
+"C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:commit /path:.
