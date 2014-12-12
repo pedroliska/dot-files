@@ -91,7 +91,7 @@
 	</mouse>
 	<tabs>
 		<tab title="Console2" use_default_icon="0">
-			<console shell="&quot;C:\Program Files (x86)\Git\bin\sh.exe&quot; --login -i" init_dir="c:\code" run_as_user="0" user=""/>
+			<console shell="&quot;C:\Program Files (x86)\Git\bin\sh.exe&quot; --login -i" init_dir="c:\home\code" run_as_user="0" user=""/>
 			<cursor style="3" r="255" g="255" b="255"/>
 			<background type="0" r="40" g="40" b="40">
 				<image file="" relative="0" extend="0" position="0">

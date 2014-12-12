@@ -1,3 +1,5 @@
+"comment lines start with doublequote
+
 set clipboard=unnamed
 set hlsearch
 set ignorecase
@@ -12,7 +14,10 @@ set vsvim_useeditordefaults
 :set scrolloff=8
 
 map <Space> :noh<CR>
-"map <S-i> <PageUp>
-"map <S-u> <PageDown>
+map <C-u> <PageUp>
+map <C-m> <PageDown>
+
+"make asterisk search not go to the next search result
+nnoremap * *``
 
 set backspace=indent,eol,start
