@@ -17,17 +17,7 @@ alias bsource='source ~/.bashrc && cd -'
 alias codefolder='cd /c/code'
 
 alias sl='([[ ! -d "src" ]] && start *.sln) || start src/*.sln'
-alias ss='startserver'
-alias sd='start .'
-alias bake='bundle exec rake'
-alias fr='bake oeapp:run'
-alias fw='bake mimosa_fastwatch'
-alias st='storyteller -p chrome'
-
-alias runraven='start "src/packages/RavenDB.Server/tools/Raven.Server.exe"'
-alias karmarun='node node_modules/karma/bin/karma start --browsers PhantomJS'
-
-alias role='whoami -groups -fo list | grep -i' 
+alias ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
 
 
 ###########################
