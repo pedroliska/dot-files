@@ -16,7 +16,7 @@ alias bedit='start ~/.bashrc'
 alias bsource='source ~/.bashrc && cd -'
 alias codefolder='cd /c/code'
 
-alias sl='([[ ! -d "src" ]] && start *.sln) || start src/*.sln'
+alias sl='([[ ! -d "Source" ]] && start *.sln) || start Source/*.sln'
 alias ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
 
 
@@ -24,15 +24,15 @@ alias ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
 # Git aliases
 ###########################
 
-alias gs='git status'
-alias gd='git diff'
-alias ga='git add --all .'
-alias gc='git commit -m'
+alias  gs='git status'
+alias  gd='git diff'
+alias  ga='git add --all .'
+alias  gc='git commit -m'
 alias gco='git checkout'
 alias  gk='git fetch origin; git remote prune origin; gitk &'
 alias gka='git fetch origin; git remote prune origin; gitk --all &'
-alias gp='git pull'
-alias gh='github'
+alias  gp='git pull'
+alias  gh='github'
 alias grm='git fetch; git rebase origin/master'
 
 alias td='cmd "/C /home/bin/tdiff.bat" &'
@@ -171,3 +171,9 @@ export LS_COLORS
 # Temp stuff
 ###########################
 
+
+
+
+
+
+cd ~/code/bizdev/pop
