@@ -168,12 +168,12 @@ export LS_COLORS
 
 
 ###########################
-# Temp stuff
+# Load local settings
 ###########################
+bashrclocal='.bashrclocal'
+if [-a bashrclocal]
+then
+  source bashrclocal
+fi
 
 
-
-
-
-
-cd ~/code/bizdev/pop
