@@ -170,10 +170,9 @@ export LS_COLORS
 ###########################
 # Load local settings
 ###########################
-bashrclocal='.bashrclocal'
-if [-a bashrclocal]
+cd
+bashrclocal=".bashrclocal"
+if [ -e $bashrclocal ]
 then
-  source bashrclocal
+  source $bashrclocal
 fi
-
-
