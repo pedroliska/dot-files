@@ -1,3 +1,4 @@
+"make sure you add a %HOME% environment variable with a value of C:\home
 "comment lines start with doublequote
 
 set clipboard=unnamed
