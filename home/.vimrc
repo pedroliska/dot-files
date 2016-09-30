@@ -15,8 +15,8 @@ set vsvim_useeditordefaults
 :set scrolloff=8
 
 map <Space> :noh<CR>
-map <C-u> <PageUp>
-map <C-m> <PageDown>
+map <S-h> <PageUp>
+map <S-l> <PageDown>
 
 "make asterisk search not go to the next search result
 nnoremap * *``
