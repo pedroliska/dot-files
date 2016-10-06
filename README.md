@@ -8,5 +8,5 @@ Commands to remember
 ====================
 
 mklink /H link source  
-mklink /H home\.bashrc code\dot-files\.bashrc  
+mklink /H .bashrc code\dot-files\home\\.bashrc  
 This makes a hard link on windows. I think it works since windows vista.
