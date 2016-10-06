@@ -13,7 +13,7 @@ set -o vi
 alias ll='ls -la'
 alias ls='ls --color=always'
 alias bedit='start ~/.bashrc'
-alias bsource='source ~/.bashrc && cd -'
+alias bsource='source ~/.bashrc'
 alias codefolder='cd /c/code'
 
 alias sl='([[ ! -d "Source" ]] && start *.sln) || start Source/*.sln'
@@ -165,14 +165,3 @@ export CHROME_BIN
 # change the ls directory color
 LS_COLORS="di=01;36:"
 export LS_COLORS
-
-
-###########################
-# Load local settings
-###########################
-cd
-bashrclocal=".bashrclocal"
-if [ -e $bashrclocal ]
-then
-  source $bashrclocal
-fi
