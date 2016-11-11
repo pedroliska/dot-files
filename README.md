@@ -7,12 +7,17 @@ This repo holds my custom setting files.
 Commands to remember
 ====================
 
-mklink /H link source  
-This makes a hard link on windows. I think it works since windows vista.
+Creating hard links from Bash:
+cd dot-files
+ln home/.bashrc ~/.bashrc  
+mkdir ~/bin  
+ln bin/tdiff.bat ~/bin/tdiff.bat  
+ln bin/tcommit.bat ~/bin/tcommit.bat  
 
-Example:
-cd ~
+Creating hard links from cmd:
+// from home dir
 mklink /H .bashrc code\dot-files\home\\.bashrc  
-mkdir bin
-mklink /H bin\tdiff.bat code\dot-files\bin\tdiff.bat
-mklink /H bin\tcommit.bat code\dot-files\bin\tcommit.bat
+mkdir bin  
+mklink /H bin\tdiff.bat code\dot-files\bin\tdiff.bat  
+mklink /H bin\tcommit.bat code\dot-files\bin\tcommit.bat  
+
