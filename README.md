@@ -15,7 +15,7 @@ ln bin/tdiff.bat ~/bin/tdiff.bat
 ln bin/tcommit.bat ~/bin/tcommit.bat  
 
 Creating hard links from cmd:  
-// from home dir
+// from home dir  
 mklink /H .bashrc code\dot-files\home\\.bashrc  
 mkdir bin  
 mklink /H bin\tdiff.bat code\dot-files\bin\tdiff.bat  
