@@ -7,18 +7,18 @@ This repo holds my custom setting files.
 Commands to remember
 ====================
 
-If you haven't set up your home directory:
-create it on c:\home
+**Set up your home directory:**  
+create it on c:\home  
 set HOME user env variable with setx HOME c:\home
 
-Creating hard links from Bash:  
+**Creating hard links from Bash:**  
 cd dot-files
 ln home/.bashrc ~/.bashrc  
 mkdir ~/bin  
 ln bin/tdiff.bat ~/bin/tdiff.bat  
 ln bin/tcommit.bat ~/bin/tcommit.bat  
 
-Creating hard links from cmd:  
+**Creating hard links from cmd:**  
 // from home dir  
 mklink /H .bashrc code\dot-files\home\\.bashrc  
 mkdir bin  
