@@ -3,7 +3,7 @@
 ###########################
 
 # this makes it so you can do vi commands on the command line
-set -o vi
+#set -o vi
 
 
 ###########################
@@ -155,13 +155,9 @@ function trace () {
 
 }
 
-
-###########################
-# These lines is needed by mimosa watch on the one-exchange project
-CHROME_BIN=/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-export CHROME_BIN
-
 ###########################
 # change the ls directory color
 LS_COLORS="di=01;36:"
 export LS_COLORS
+
+cd
