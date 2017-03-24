@@ -14,7 +14,7 @@ alias ll='ls -la'
 alias ls='ls --color=always'
 alias bedit='start ~/.bashrc'
 alias bsource='source ~/.bashrc'
-alias codefolder='cd /c/code'
+alias current='cd /c/home/docs/code/websites/pedroliska.com/MovieFinder/angular2'
 
 alias sl='([[ ! -d "Source" ]] && start *.sln) || start Source/*.sln'
 alias ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
