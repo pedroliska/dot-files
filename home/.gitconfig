@@ -17,8 +17,8 @@
 ###################
 [diff]
   renames = copies
-  tool = p4diff
-  #tool = tortoisediff
+  #tool = p4diff
+  tool = tortoisediff
 [difftool]
   prompt = false
 
@@ -33,8 +33,8 @@
 ###################
 [merge]
   keepBackup = false
-  tool = p4merge
-  #tool = tortoisemerge
+  #tool = p4merge
+  tool = tortoisemerge
 [mergetool]
   prompt = false
   keepBackup = false
