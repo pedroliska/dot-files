@@ -3,7 +3,7 @@
 ###########################
 
 # this makes it so you can do vi commands on the command line
-#set -o vi
+set -o vi
 
 
 ###########################
@@ -12,9 +12,12 @@
 
 alias ll='ls -la'
 alias ls='ls --color=always'
-alias bedit='start ~/.bashrc'
+alias bedit='ed ~/.bashrc'
 alias bsource='source ~/.bashrc'
-alias current='cd /c/home/docs/code/websites/pedroliska.com/MovieFinder/angular2'
+
+alias dcurrent='cd /c/home/code/DefaultCollection/SWENG/QuickRenewDoctorPortal/Main/Source/QuickRenewDoctorPortal'
+alias dcode='cd /c/home/code'
+alias current='dcurrent'
 
 alias sl='([[ ! -d "Source" ]] && start *.sln) || start Source/*.sln'
 alias ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
@@ -129,7 +132,8 @@ function vim(){
 }
 
 function ed() {
-  "C:\Program Files\Sublime Text 3\sublime_text.exe" $1 &
+  #"C:\Program Files\Sublime Text 3\sublime_text.exe" $1 &
+  "code" $1 &
 }
 
 function issuelesscommits() {
@@ -155,9 +159,31 @@ function trace () {
 
 }
 
+
+###########################
+# These lines is needed by mimosa watch on the one-exchange project
+CHROME_BIN=/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+export CHROME_BIN
+
 ###########################
 # change the ls directory color
-LS_COLORS="di=01;36:"
+LS_COLORS=$LS_COLORS:'di=0;35:'
 export LS_COLORS
+# Blue = 34
+# Green = 32
+# Light Green = 1;32
+# Cyan = 36
+# Red = 31
+# Purple = 35
+# Brown = 33
+# Yellow = 1;33
+# Bold White = 1;37
+# Light Grey = 0;37
+# Black = 30
+# Dark Grey= 1;30
 
-cd
+###########################
+# Update the Prompt Screen (remove MINGW64)
+# by default it looked like this and i didn't like it: pliska@PLISKA-1700 MINGW64 ~
+PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+export PS1
