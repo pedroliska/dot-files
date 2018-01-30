@@ -12,7 +12,7 @@ create it on c:\home
 set HOME user env variable with setx HOME c:\home
 
 **Creating hard links from Bash:**  
-cd dot-files
+cd dot-files  
 ln home/.bashrc ~/.bashrc  
 mkdir ~/bin  
 ln bin/tdiff.bat ~/bin/tdiff.bat  
