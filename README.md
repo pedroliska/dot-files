@@ -9,7 +9,9 @@ Commands to remember
 
 **Set up your home directory:**  
 create it on c:\home  
-set HOME user env variable with setx HOME c:\home
+set HOME user env variable with:  
+setx HOME c:\home
+exit
 
 **Creating hard links from Bash:**  
 cd dot-files  
