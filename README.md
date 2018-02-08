@@ -13,6 +13,13 @@ set HOME user env variable with:
 setx HOME c:\home  
 exit
 
+**Setting up GitHub authentication**  
+ssh-keygen -t rsa -b 4096 -C "your email address"  
+start ~/.ssh  
+open id_rsa.pub
+copy paste the key to your github account
+
+
 **Creating hard links from Bash:**  
 cd dot-files  
 ln home/.bashrc ~/.bashrc  
