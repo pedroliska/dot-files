@@ -15,7 +15,7 @@ alias ls='ls --color=always'
 alias bedit='ed ~/.bashrc'
 alias bsource='source ~/.bashrc'
 
-alias dcurrent='cd /c/home/code/DefaultCollection/SWENG/QuickRenewDoctorPortal/Main/Source/QuickRenewDoctorPortal'
+alias dcurrent='cd /c/home/code/BizDev'
 alias dcode='cd /c/home/code'
 alias current='dcurrent'
 
@@ -187,3 +187,5 @@ export LS_COLORS
 # by default it looked like this and i didn't like it: pliska@PLISKA-1700 MINGW64 ~
 PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
 export PS1
+
+current;
