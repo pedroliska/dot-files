@@ -2,10 +2,6 @@
   name = Pedro Liska
 [push]
   default = simple
-[color "status"]
-  added = white green
-  changed = white red
-  untracked = white red
 [core]
   autocrlf = true
   excludesfile = c:/home/.gitignore_global
