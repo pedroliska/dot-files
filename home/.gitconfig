@@ -28,8 +28,9 @@
 ###################
 [merge]
   keepBackup = false
+  ### Set the default tool by uncommenting one of the lines below
   #tool = p4merge
-  tool = tortoisemerge
+  #tool = tortoisemerge
 [mergetool]
   prompt = false
   keepBackup = false

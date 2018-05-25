@@ -74,7 +74,7 @@ function symlink35(){
   bake nuget:symlink35[$1,$2]
 }
 
-function github(){
+function gitweb(){
   if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
     remote=$1
 
@@ -97,6 +97,11 @@ function github(){
   else
     echo 'Not in a Git repository'
   fi
+}
+
+function github(){
+  echo "executing GITWEB command"
+  gitweb
 }
 
 function ehclone(){
