@@ -104,30 +104,6 @@ function github(){
   gitweb
 }
 
-function ehclone(){
-  if [ -z "$1" ]
-  then
-    echo "Missing git repository url ending"
-    echo "usage: ehclone 'extendhealth git repository ending' ['target directory name']"
-    return
-  fi
-
-  giturl="git@github.extendhealth.com:extend-health/$1.git"
-
-  if [ -z "$2" ]
-    then
-      # we DON'T HAVE a target directory
-      targetDir=$1
-    else
-      # we HAVE a target directory
-      targetDir=$2
-  fi
-  git clone --template=C:/home/eh-git $giturl $targetDir
-  cd $targetDir
-
-  bundle install
-}
-
 function vim(){
   if [[ $# -eq 0 ]]; then
     gvim &
