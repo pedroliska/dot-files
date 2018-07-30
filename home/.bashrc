@@ -19,8 +19,9 @@ alias dcurrent='cd /c/home/code/BizDev'
 alias dcode='cd /c/home/code'
 alias current='dcurrent'
 
-alias sl='([[ ! -d "Source" ]] && start *.sln) || start Source/*.sln'
-alias ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
+alias  sl='([[ ! -d "Source" ]] && start *.sln) || start Source/*.sln'
+alias sla='git pull &&  sl &&  gka'
+alias  ds='cd ~/mine/dynamic/work/skullcandy/ordermanager/00-code'
 
 
 ###########################
@@ -45,6 +46,20 @@ alias tc='cmd "/C /home/bin/tcommit.bat" &'
 ###########################
 # bash functions
 ###########################
+
+# function sl() {
+#   if [ -z "$1" ]
+#   then
+#     # we have no parameters
+#     rootDir=''
+#   else
+#     # we have a directory parameter
+#     rootDir=$1/
+#   fi
+#   sourceDir=$rootDir
+#   sourceDir+="Source";
+#   ([[ ! -d $sourceDir ]] && start $rootDir*.sln) || start $sourceDir/*.sln
+# }
 
 function findg(){
   if [ -z "$1" ]
