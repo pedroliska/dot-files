@@ -47,6 +47,12 @@ alias tc='cmd "/C /home/bin/tcommit.bat" &'
 # bash functions
 ###########################
 
+function wclone() {
+  repoUrl='https://tfs.1800contacts.com/tfs/defaultcollection/BizDev/_git/'
+  repoUrl+=$1
+  git clone $repoUrl
+}
+
 # function sl() {
 #   if [ -z "$1" ]
 #   then
