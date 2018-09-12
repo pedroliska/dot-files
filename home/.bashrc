@@ -51,6 +51,11 @@ function wclone() {
   repoUrl='https://tfs.1800contacts.com/tfs/defaultcollection/BizDev/_git/'
   repoUrl+=$1
   git clone $repoUrl
+  cd $1
+}
+
+function kraken () {
+	/c/Users/pliska/AppData/Local/gitkraken/app-4.0.2/gitkraken.exe -p $(pwd) &
 }
 
 # function sl() {
